@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Course Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .border{
+            width: 380px;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 50px auto;
+        }
+
+        h4, h3 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body class="border">
+
+
+    <img src="geulogo.jpg" width="60" style="float:left;">
+    <h2><u>GRAPHIC ERA UNIVERSITY</u></h2>
+
+    <marquee>
+        566/6, Bell Road, Society Area, Clement Town, Dehradun, Uttarakhand, 248002, India
+    </marquee>
+
+    <hr>
+
+    <h3>STUDENT REGISTRATION FORM</h3>
+    <br>
+
+    <form action="thank.html" method="post">
+
+        <label>Student Name:</label>
+        <input type="text" name="name" required minlength="3" maxlength="30"><br>
+
+        <label>University Email ID:</label>
+        <input type="email" name="email" required><br>
+
+        <label>USN / Roll Number:</label>
+        <input type="number" name="usn" required><br>
+
+        <label>Course:</label>
+        <select name="course" required>
+            <option>Select Course</option>
+            <option>BCA</option>
+            <option>B.Tech</option>
+            <option>MCA</option>
+            <option>M.Tech</option>
+        </select><br>
+
+        <label>Age:</label>
+        <input type="number" name="age" min="18" max="30" required><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br><br>
+
+        <center>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </center>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #container {
+            position: relative;
+            width: 600px;
+        }
+        #circle {
+            position: absolute;
+            border: 2px solid blue;
+            left: 320px;
+            width: 40px;
+            top: 260px;
+            height: 40px;
+            border-radius: 200%;
+            pointer-events: none;
+        }
+        #polygon {
+    position: absolute;
+    top: 155px;
+    left: 300px;
+    width: 200px;
+    height: 100px;
+    background: rgba(30, 255, 0, 0.267);
+    clip-path: polygon(
+        63% 33%,  /* Top-Left (Roof back corner) */
+        88% 41%,  /* Top-Right (Roof back corner) */
+        83% 77%,  /* Bottom-Right (Ground front corner) */
+        64% 62%   /* Bottom-Left (Ground front corner) */
+    );
+        border: 2px solid red;
+    pointer-events: none;
+
+}
+        #square {
+            position: absolute;
+            border: 2px solid red;
+            left: 100px;
+            width: 40px;
+
+            top: 100px;
+            height: 40px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <img src="unnamed.jpg" width="600" usemap="#mymap">
+    <div id="square">view detail</div>
+    <div id="circle">view detail</div>
+    <div id="polygon">view detail</div>
+</div>
+
+<map name="mymap">
+    <area shape="rect" coords="100,100,140,140" href="opd.html">
+    <area shape="circle" coords="320,240,40" href="diag.html">
+    <area shape="poly" coords="378,112,528,139,498,260,384,210" href="emergency.html">
+
+
+</map>
+
+</body>
+</html>

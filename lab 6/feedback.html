@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Job Application Form</title>
+    <link rel="stylesheet" type="text/css" href="feedback.css">
+<style>
+   .border{
+        border-radius: 10px;
+        box-shadow: 0px 0px 100px #888888;
+    }
+    label,input{;
+    }
+
+    form{
+        width: 300px;
+    }
+</style>
+</head>
+<body >
+<div class="border" style="background-color: antiquewhite;">
+<img src="geulogo.jpg" width="60" style="float:left;">
+<h1> *FEEDBACK FORM*</h1><br>
+<form action="thank.html" method="post" style="color: rgb(5, 91, 37);">
+    <br><label><strong>Name:</strong></label>
+    <input type="text" name="fullname" required minlength="4">
+    <br>
+
+    <label><strong>Email Address:</strong></label>
+    <input type="email" name="email" pattern="^[0-9]+@geu.ac.in" required>
+    <br>
+
+    <label><b>subject SELECTION</b></label>
+    <select name="subject you want" required>
+        <option>Select subject</option>
+            <option>Compiler design</option>
+            <option>full stack</option>
+            <option>machine learning</option>
+            <option>devops</option>
+        </select><br>
+
+    <label><strong>FEEDBACK:</strong></label><br>
+    
+    <textarea name="feedback" rows="25" cols="80" required></textarea>
+    <br><br>
+<center>
+    <input type="submit" value="Submit Application">
+</center>
+</form>
+</div>
+</body>
+</html>

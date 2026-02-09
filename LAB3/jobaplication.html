@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .border{
+            width: 350px;
+            border: 4px solid rgb(0, 173, 64);
+            padding: 20px;
+            margin: 10px auto;
+        }
+
+        h1,h2,h3,h4,h5,h6,label {
+            text-align: center;
+            margin: 5px 0;
+        }
+        input {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body class="border">
+<center>
+<img src="geulogo.jpg" width="120" align="center"><br> 
+<h1> Job Application Form</h1><br>
+<form action="thank.html" method="post">
+    <br><label><strong>Name:</strong></label><br>
+    <input type="text" name="fullname" required minlength="4">
+    <br>
+
+    <label><strong>Email Address:</strong></label><br>
+    <input type="email" name="email" required>
+    <br>
+
+    <label><strong>Mobile Number:</strong></label><br>
+    <input type="text" name="mobile" required pattern="[0-9]{10}">
+    <br>
+
+    <label><strong>Years of Experience:</strong></label><br>
+    <input type="number" name="experience" min="0" max="30" step="1">
+    <br>
+    <label><strong>Job Role:</strong></label><br>
+    <select name="jobrole" required>
+        <option>Select</option>
+        <option>Software Developer</option>
+        <option>Web Developer</option>
+        <option>Data Analyst</option>
+        <option>Cyber Security Analyst</option>
+    </select>
+    <br><br>
+    <label><strong>Technical Skills:</strong></label>
+    <br>
+    <input type="checkbox" name="skill" value="HTML"> HTML
+    <input type="checkbox" name="skill" value="CSS"> CSS
+    <input type="checkbox" name="skill" value="JavaScript"> JavaScript
+    <input type="checkbox" name="skill" value="Python"> Python
+    <br>
+    <label><strong>Cover Letter:</strong></label><br>
+    <textarea name="coverletter" rows="5" cols="30" required></textarea>
+    <br>
+
+    <input type="submit" value="Submit Application">
+
+</form>
+</center>
+</body>
+</html>

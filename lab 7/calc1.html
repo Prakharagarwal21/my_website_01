@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stylish Calculator</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        .calc {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            padding: 20px;
+            border-radius: 18px;
+            width: 300px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 100%;
+            height: 70px;
+            font-size: 22px;
+            margin-bottom: 15px;
+            /* text-align: right; */
+            border-radius: 12px;
+            border: none;
+            outline: none;
+            background: rgba(255,255,255,0.8);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 55px;
+            height: 45px;
+            font-size: 18px;
+            margin: 6px 0;
+            border-radius: 12px;
+            border: 5px solid rgba(0,0,0,0.1);
+            cursor: pointer;
+            background: #ffffff;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+
+        .op {
+            background: #ffb703;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .clear {
+            background: #ff595e;
+            color: white;
+            font-weight: bold;
+        }
+
+        .equal {
+            width: 120px;
+            background: #00bbf9;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="calc">
+    <input type="text" id="display" disabled>
+
+    <div class="row">
+        <button class="clear" onclick="clr()">C</button>
+        <button class="op" onclick="append('%')">%</button>
+        <button class="op" onclick="append('**')">^</button>
+        <button class="op" onclick="append('/')">/</button>
+    </div>
+
+    <div class="row">
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button class="op" onclick="append('*')">x</button>
+    </div>
+
+    <div class="row">
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button class="op" onclick="append('-')">_</button>
+    </div>
+
+    <div class="row">
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button class="op" onclick="append('+')">+</button>
+    </div>
+
+    <div class="row">
+        <button onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
+        <button class="equal" onclick="calculate()">=</button>
+    </div>
+</div>
+
+<script>
+    function append(value) {
+        document.getElementById("display").value += value;
+    }
+
+    function clr() {
+        document.getElementById("display").value = "";
+    }
+
+    function calculate() {
+        let exp = document.getElementById("display").value;
+        document.getElementById("display").value = eval(exp);
+    }
+</script>
+
+</body>
+</html>
