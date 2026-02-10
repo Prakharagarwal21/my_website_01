@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #container {
+            position: relative;
+            width: 600px;
+            margin: 0 auto; /* Centers the map */
+        }
+        
+        /* Shared style for all shapes */
+        .highlight {
+            position: absolute;
+            pointer-events: none; /* Allows click to pass through to the map */
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s ease; /* Smooth fade effect */
+            background: rgba(255, 255, 255, 0.2); /* Slight white tint fill */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Glowing effect */
+        }
+
+        /* Specific Shapes */
+        #square {
+            border: 2px solid red;
+            left: 100px;
+            top: 100px;
+            width: 60px;
+            height: 60px;
+        }
+
+        #circle {
+            border: 2px solid blue;
+            left: 260px;
+            top: 125px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        #polygon {
+            top: 50px;
+            left: 473px;
+            width: 100px;
+            height: 100px;
+            /* Matches the CSS clip-path to the area coords roughly */
+            clip-path: polygon(50% 0%, 90% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+            background: rgba(30, 255, 0, 0.3);
+            border: 2px solid green; /* Note: border doesn't work well with clip-path, using background instead */
+        }
+
+        /* Class to make them visible */
+        .active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h2 style="text-align:center;">Dubai Islands Map</h2>
+    
+    <img src="dubai-islands-map.jpg" width="600" usemap="#mymap" style="display:block;">
+    
+    <div id="square" class="highlight"></div>
+    <div id="circle" class="highlight"></div>
+    <div id="polygon" class="highlight"></div>
+</div>
+
+<map name="mymap">
+    <area shape="rect" coords="100,50,160,110" href="palm_jebel_ali.html" 
+          title="Palm Jebel Ali" 
+          onmouseover="show('square')" 
+          onmouseout="hide('square')">
+
+    <area shape="circle" coords="290,120,30" href="palm_jumeirah.html" 
+          title="Palm Jumeirah" 
+          onmouseover="show('circle')" 
+          onmouseout="hide('circle')">
+
+    <area shape="poly" coords="523,0,563,25,566,75,523,100,480,75,480,25" href="palm_deira.html" 
+          title="Palm Deira" 
+          onmouseover="show('polygon')" 
+          onmouseout="hide('polygon')">
+</map>
+
+<script>
+    // Simple function to show the shape
+    function show(id) {
+        document.getElementById(id).classList.add('active');
+    }
+
+    // Simple function to hide the shape
+    function hide(id) {
+        document.getElementById(id).classList.remove('active');
+    }
+</script>
+
+</body>
+</html>`

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #container {
+            position: relative;
+            width: 600px;
+        }
+        #circle {
+            position: absolute;
+            border: 2px solid blue;
+            left: 260px;
+            width: 60px;
+            top: 90px;
+            height: 60px;
+            border-radius: 100%;
+            pointer-events: none;
+        }
+        #polygon {
+    position: absolute;
+    top: 0px;
+    left: 473px;
+    width: 100px;
+    height: 100px;
+    background: rgba(30, 255, 0, 0.267);
+    clip-path: polygon(
+        50% 0%,   
+        90% 25%,  
+        93% 75%,  
+        50% 100%, 
+        7% 75%,   
+        7% 25%    
+    );
+    border: 2px solid red;
+    pointer-events: none;
+
+}
+        #square {
+            position: absolute;
+            border: 2px solid red;
+            left: 100px;
+            width: 60px;
+
+            top: 50px;
+            height: 60px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <img src="dubai-islands-map.jpg" width="600" usemap="#mymap">
+    <div id="square"></div>
+    <div id="circle"></div>
+    <div id="polygon"></div>
+</div>
+
+<map name="mymap">
+    <area shape="rect" coords="100,50,160,110" href="palm_jebel_ali.html">
+    <area shape="circle" coords="290,120,30" href="palm_jumeirah.html">
+    <area shape="poly" coords="523,0,563,25,566,75,523,100,480,75,480,25" href="palm_deira.html">
+
+
+</map>
+
+</body>
+</html>
